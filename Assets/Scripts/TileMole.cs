@@ -15,15 +15,15 @@ public sealed class TileMole : MonoBehaviour
 
     private static readonly Vector3 DIVE_POSITION = Vector3.down;
     private static readonly Vector3 SHOW_POSITION = Vector3.zero;
-    private const Ease EASING = Ease.InOutCirc;
-    private const float DURATION = 0.2f;
-    private const int SCORE_PER_HIT = 1;
+    private static readonly Ease EASING = Ease.InOutCirc;
+    private static readonly float DURATION = 0.2f;
+    private static readonly int SCORE_PER_HIT = 1;
 
-    private const float HIT_EXIT_DURATION = 0.05f;
-    private const float HIT_PUNCH_DURATION = 0.05f;
-    private const float HIT_PUNCH_STRENGTH = 0.1f;
-    private const int HIT_PUNCH_WAVE_MIN = 2;
-    private const int HIT_PUNCH_WAVE_MAX = 5;
+    private static readonly float HIT_EXIT_DURATION = 0.05f;
+    private static readonly float HIT_PUNCH_DURATION = 0.05f;
+    private static readonly float HIT_PUNCH_STRENGTH = 0.1f;
+    private static readonly int HIT_PUNCH_WAVE_MIN = 2;
+    private static readonly int HIT_PUNCH_WAVE_MAX = 5;
 
     void Start()
     {
