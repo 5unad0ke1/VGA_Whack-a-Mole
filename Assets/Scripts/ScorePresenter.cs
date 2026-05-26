@@ -11,6 +11,12 @@ public sealed class ScorePresenter : MonoBehaviour
 
     private MotionHandle _handle;
 
+
+    private static readonly Vector3 TEXT_ANIMATION_FROM = Vector3.one * 1.2f;
+    private static readonly Vector3 TEXT_ANIMATION_TO = Vector3.one;
+    private static readonly float TEXT_ANIMATION_DURATION = 0.05f;
+    private static readonly Ease TEXT_ANIMATION_EASE = Ease.InCirc;
+
     void Start()
     {
         _inGameManager.Score.Subscribe(OnUpdate)
@@ -25,8 +31,8 @@ public sealed class ScorePresenter : MonoBehaviour
         _text.SetText(score.ToString());
 
         _handle.TryCancel();
-        _handle = LMotion.Create(Vector3.one * 1.2f, Vector3.one, 0.05f)
-            .WithEase(Ease.InCirc)
+        _handle = LMotion.Create(TEXT_ANIMATION_FROM, TEXT_ANIMATION_TO, TEXT_ANIMATION_DURATION)
+            .WithEase(TEXT_ANIMATION_EASE)
             .BindToLocalScale(_text.transform);
     }
 }
