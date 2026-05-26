@@ -25,6 +25,9 @@ public sealed class TileMole : MonoBehaviour
     private static readonly int HIT_PUNCH_WAVE_MIN = 2;
     private static readonly int HIT_PUNCH_WAVE_MAX = 5;
 
+    private static readonly float TIMER_RANDOM_MIN = 1f;
+    private static readonly float TIMER_RANDOM_MAX = 3f;
+
     void Start()
     {
         ResetTimer();
@@ -71,7 +74,7 @@ public sealed class TileMole : MonoBehaviour
 
     private void ResetTimer()
     {
-        _timer = Random.Range(1f, 3f);
+        _timer = Random.Range(TIMER_RANDOM_MIN, TIMER_RANDOM_MAX);
     }
     private void PlayEnterAnimation()
     {
